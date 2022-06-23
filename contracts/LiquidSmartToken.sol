@@ -7,18 +7,34 @@ contract LiquidSmartToken {
         pure
         returns (uint256 tokenId)
     {
-        uint256 n = bits.length;
-        require(n < 256, "Overflow");
-        require(checksum(bits) == 256, "Incorrect Sum");
-        require(data.length == n, "Mismatch");
+        require(bits.length < 256, "Overflow");
+        require(data.length == bits.length, "Mismatch");
+        require(checksum(bits) == 256, "Checksum");
+
         uint256 shift = 256;
 
-        for (uint8 i = 0; i < n - 1; i++) {
+        for (uint8 i = 0; i < bits.length - 1; i++) {
             shift -= bits[i];
             tokenId = tokenId | (data[i] << shift);
         }
 
-        tokenId = tokenId | data[n - 1];
+        tokenId = tokenId | data[bits.length - 1];
+    }
+
+    function metadata(uint256 tokenId, uint8[] memory bits)
+        public
+        pure
+        returns (uint256[] memory data)
+    {
+        require(bits.length < 256, "Overflow");
+        require(checksum(bits) == 256, "Checksum");
+
+        uint256 shift = 256;
+
+        for (uint8 i = 0; i < bits.length - 1; i++) {
+            shift -= bits[i];
+            data[i] = (tokenId & ((2**bits[i] - 1) << shift)) >> shift;
+        }
     }
 
     function checksum(uint8[] memory input) public pure returns (uint8 sum) {
