@@ -11,7 +11,7 @@ contract SolidSmartToken {
         bytes2 data6;
     }
 
-    function id(Metadata memory data) internal pure returns (uint256 tokenId) {
+    function id(Metadata memory data) public pure returns (uint256 tokenId) {
         tokenId =
             (uint256(uint160(data.data1)) << 96) |
             (uint256(data.data2) << 64) |
@@ -22,7 +22,7 @@ contract SolidSmartToken {
     }
 
     function metadata(uint256 tokenId)
-        internal
+        public
         pure
         returns (Metadata memory data)
     {
