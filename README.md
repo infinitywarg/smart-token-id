@@ -36,4 +36,4 @@ Each implementation has two functions id() and metadata():
 
 Although anyone is free to use this code, it is still experimental.
 I am attempting to remove the exact 256-bit sum requirement.
-It would be apprecaited if any developer wishes to contribute and raise an issue with the code to make these implementations more robust.
+It would be immensely apprecaited if any developer wishes to contribute, write tests or raise an issue with the code to make these implementations more robust.
