@@ -7,8 +7,8 @@ contract LiquidSmartToken {
         pure
         returns (uint256 tokenId)
     {
-        require(bits.length < 256, "Overflow");
         require(data.length == bits.length, "Mismatch");
+        require(bits.length < 256, "Overflow");
         require(checksum(bits) == 256, "Checksum");
 
         uint256 shift = 256;
