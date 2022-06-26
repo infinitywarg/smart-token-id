@@ -33,9 +33,10 @@ Each implementation has two functions id() and metadata():
 - id() encodes a Smart Token Id from input struct or array containing metadata
 - metadata() decodes a Smart TokenId into struct or array containing metadata
 
+Next enhancement is removing the exact 256-bit sum requirement.
+
+Would immensely appreciate if any developer wishes to contribute, write tests or raise an issue to make these implementations more robust.
+
 # Disclaimer
 
 Although anyone is free to use this code, it is still experimental and not production ready. For any problems arising out of the use of this code, monetory or otherwise, into any smart contract projects, the organization and any contributing developers will NOT be responsible.
-
-I am attempting to remove the exact 256-bit sum requirement.
-It would be immensely apprecaited if any developer wishes to contribute, write tests or raise an issue with the code to make these implementations more robust.
