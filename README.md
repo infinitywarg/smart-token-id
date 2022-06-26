@@ -13,7 +13,7 @@ Some examples would be:
 
 This on-chain metadata can be maintained in the token contract state variables using structs and mappings.
 
-However, such an implementation requires that any frontend/backend which may require that metadata, or another contract which may build transactions using thet metadata, must query the token contract each time.
+However, such an implementation requires that any frontend/backend which may require that metadata, or another contract which may build transactions using that metadata, must query the token contract each time.
 
 Solidity provides 256-bit unsigned integers as token ids. What if we encode the on-chain metadata into the token id itself, so that it can be destructured anytime, anywhere when required.
 
@@ -25,6 +25,7 @@ In both implementations, developers are expected to know the metadata before inc
 - Liquid Token Id: Metadata is passed as an array of uint256 with a corresponding array of bit lengths such that they sum to 256-bits.
 
 If the sum is less than 256 bits, please add a prefix variable with remaining bits and value 0.
+
 The difference between two implementations is that Solid Token Ids cannot be changed once developed and deployed, while Liquid Token Ids are relatively malleable and can be changed by changing input arrays.
 
 Each implementation has two functions id() and metadata():
@@ -34,6 +35,7 @@ Each implementation has two functions id() and metadata():
 
 # Disclaimer
 
-Although anyone is free to use this code, it is still experimental.
+Although anyone is free to use this code, it is still experimental and not production ready. For any problems arising out of the use of this code, monetory or otherwise, into any smart contract projects, the organization and any contributing developers will NOT be responsible.
+
 I am attempting to remove the exact 256-bit sum requirement.
 It would be immensely apprecaited if any developer wishes to contribute, write tests or raise an issue with the code to make these implementations more robust.
