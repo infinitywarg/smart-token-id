@@ -11,7 +11,7 @@
 
 <p align = "center">💡 Solidity library to encode token metadata into token id. Can be used with ERC721 and ERC1155 tokens for encoding NFT metadata upto 256-bits. 💡</p>
 
-## Table of Contents
+## What is a Smart Token Id?
 
 ERC721 and ERC1155 tokenization standards have the concept of token id which uniquely defines a particular #token type, such that single or multiple supply of each token id can be minted.
 
@@ -30,6 +30,8 @@ Solidity has 256-bit unsigned integers as token ids. What if we encode on-chain 
 
 These are two reference implementations of such 'Smart Token Ids' using bitwise operators.
 
+## Reference Implementations
+
 In both implementations, developers are expected to know the metadata before encoding it into a token id.
 
 - Solid Token Id: Metadata is defined in a struct such that total bit lengths of all struct members sum to 256-bits. Solidity packs the entire struct into a single storage slot.
@@ -46,6 +48,6 @@ Each implementation has two functions:
 
 Next enhancement is removing the exact 256-bit sum requirement.
 
-# Disclaimer
+## Disclaimer
 
 Although anyone is free to use this code, it is still experimental and not production ready. For any problems arising out of the use of this code, monetory or otherwise, into any smart contract projects, the organization and any contributing developers will NOT be responsible.
