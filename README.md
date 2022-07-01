@@ -13,7 +13,7 @@
 
 ## What is a Smart Token Id?
 
-ERC721 and ERC1155 tokenization standards have the concept of token id which uniquely defines a particular #token type, such that single or multiple supply of each token id can be minted.
+ERC721 and ERC1155 tokenization standards have the concept of token id which uniquely defines a particular token type, such that single or multiple supply of each token id can be minted.
 
 Although the metadata of a token id is kept offchain (mostly using IPFS) in many use cases, there's a requirement to have some metadata #onchain.
 
@@ -47,7 +47,3 @@ Each implementation has two functions:
 - metadata() decodes a Smart TokenId into struct or array containing metadata
 
 Next enhancement is removing the exact 256-bit sum requirement.
-
-## Disclaimer
-
-Although anyone is free to use this code, it is still experimental and not production ready. For any problems arising out of the use of this code, monetory or otherwise, into any smart contract projects, the organization and any contributing developers will NOT be responsible.
