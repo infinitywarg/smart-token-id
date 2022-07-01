@@ -2,11 +2,7 @@
 pragma solidity =0.8.8;
 
 contract LiquidSmartToken {
-    function id(uint256[] memory data, uint8[] memory bits)
-        public
-        pure
-        returns (uint256 tokenId)
-    {
+    function id(uint256[] memory data, uint8[] memory bits) public pure returns (uint256 tokenId) {
         require(data.length == bits.length, "Mismatch");
         require(bits.length < 256, "Overflow");
         require(checksum(bits) == 256, "Checksum");
@@ -21,11 +17,7 @@ contract LiquidSmartToken {
         tokenId = tokenId | data[bits.length - 1];
     }
 
-    function metadata(uint256 tokenId, uint8[] memory bits)
-        public
-        pure
-        returns (uint256[] memory data)
-    {
+    function metadata(uint256 tokenId, uint8[] memory bits) public pure returns (uint256[] memory data) {
         require(bits.length < 256, "Overflow");
         require(checksum(bits) == 256, "Checksum");
 

@@ -21,11 +21,7 @@ contract SolidSmartToken {
             uint256(uint16(data.data6));
     }
 
-    function metadata(uint256 tokenId)
-        public
-        pure
-        returns (Metadata memory data)
-    {
+    function metadata(uint256 tokenId) public pure returns (Metadata memory data) {
         data.data1 = address(uint160((tokenId & (((2**160 - 1) << 96) >> 96))));
         data.data2 = uint32((tokenId & ((2**32 - 1) << 64)) >> 64);
         data.data3 = uint16((tokenId & ((2**16 - 1) << 48)) >> 48);
